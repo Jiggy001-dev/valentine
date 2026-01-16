@@ -1,8 +1,21 @@
 let noCount = 0;
+let yesSize = 1; // initial scale
+const maxYesSize = 2; // maximum scale for YES button
+
+// Array of images for "No" clicks
+const noImages = [
+  "Img/sad teddy.jpeg",
+  "Img/sad teddy2.jpeg",
+  "Img/sad teddy 3.jpeg",
+  "Img/sad teddy 4.jpg",
+];
 
 function noClicked() {
   const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.querySelector(".yes");
+  const teddy = document.getElementById("teddy");
 
+  // Update NO button text
   if (noCount === 0) {
     noBtn.innerText = "Are you sure?";
   } else if (noCount === 1) {
@@ -11,10 +24,26 @@ function noClicked() {
     noBtn.innerText = "You've broken my heart 💔";
   }
   noCount++;
+
+  // Increase YES button size up to maxYesSize
+  if (yesSize < maxYesSize) {
+    yesSize += 0.1; // growth step
+    yesBtn.style.transform = `scale(${yesSize})`;
+  }
+
+  // Change the teddy image randomly
+  const randomIndex = Math.floor(Math.random() * noImages.length);
+  teddy.src = noImages[randomIndex];
 }
 
 function yesClicked() {
-  document.getElementById("teddy").src = "Img/teddy.avif"; // Update if you have a hugging teddy image
+  const yesBtn = document.querySelector(".yes");
+
+  // Reset YES button size back to normal
+  yesBtn.style.transform = "scale(1)";
+  yesSize = 1;
+
+  document.getElementById("teddy").src = "Img/teddy2.jpeg"; // Update if you have hugging teddy
   document.getElementById("question").innerText = "YAY!!! 💖";
   document.getElementById("text").innerText =
     "I LOVE YOU, OLUWASEYI STEPHEN 🥰🐻🐻";
@@ -25,7 +54,11 @@ function yesClicked() {
 }
 
 function resetPage() {
-  document.getElementById("teddy").src = "Img/teddy.avif";
+  const yesBtn = document.querySelector(".yes");
+  const teddy = document.getElementById("teddy");
+  const noBtn = document.getElementById("noBtn");
+
+  teddy.src = "Img/teddy.avif";
   document.getElementById("question").innerText = "Oluwaseyi Stephen 💖";
   document.getElementById("text").innerText = "Will you be my Valentine?";
 
@@ -33,9 +66,11 @@ function resetPage() {
   document.querySelector(".buttons").style.display = "flex";
   document.getElementById("resetBtn").style.display = "none";
 
-  const noBtn = document.getElementById("noBtn");
   noBtn.innerText = "No";
   noCount = 0;
+
+  yesBtn.style.transform = "scale(1)";
+  yesSize = 1;
 }
 
 /* Floating hearts animation */

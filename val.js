@@ -4,10 +4,10 @@ const maxYesSize = 2; // maximum scale for YES button
 
 // Array of images for "No" clicks
 const noImages = [
-  "Img/sad teddy.jpeg",
-  "Img/sad teddy2.jpeg",
-  "Img/sad teddy 3.jpeg",
-  "Img/sad teddy 4.jpg",
+  "img/sad teddy.jpeg",
+  "img/sad teddy2.jpeg",
+  "img/sad teddy 3.jpeg",
+  "img/sad teddy 4.jpg",
 ];
 
 function noClicked() {
@@ -43,7 +43,7 @@ function yesClicked() {
   yesBtn.style.transform = "scale(1)";
   yesSize = 1;
 
-  document.getElementById("teddy").src = "Img/teddy2.jpeg"; // Update if you have hugging teddy
+  document.getElementById("teddy").src = "img/teddy2.jpeg"; // Update if you have hugging teddy
   document.getElementById("question").innerText = "YAY!!! 💖";
   document.getElementById("text").innerText =
     "I LOVE YOU, OLUWASEYI STEPHEN 🥰🐻🐻";

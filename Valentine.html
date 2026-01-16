@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Be My Valentine 💖</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="val.css">
+</head>
+<body>
+
+    <div class="card">
+        <img id="teddy" src="Img/teddy.avif" alt="Teddy Bear">
+
+        <h1 id="question">Oluwaseyi Stephen 💖</h1>
+
+        <p id="text">Will you be my Valentine?</p>
+
+        <div class="buttons">
+            <button class="yes" onclick="yesClicked()">Yes 💕</button>
+            <button class="no" id="noBtn" onclick="noClicked()">No</button>
+        </div>
+
+        <!-- Reset button (hidden initially) -->
+        <button id="resetBtn" onclick="resetPage()">💖 Restart 💖</button>
+
+        <!-- Signature -->
+        <p class="signature">Your babe, Dasola 💌</p>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="val.js"></script>
+</body>
+</html>

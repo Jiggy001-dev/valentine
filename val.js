@@ -4,10 +4,10 @@ const maxYesSize = 2; // maximum scale for YES button
 
 // Array of images for "No" clicks
 const noImages = [
-  "img/sad teddy.jpeg",
   "img/sad teddy2.jpeg",
-  "img/sad teddy 3.jpeg",
+  "img/sad teddy.jpeg",
   "img/sad teddy 4.jpg",
+  "img/sad teddy 3.jpeg",
 ];
 
 function noClicked() {
@@ -58,7 +58,9 @@ function resetPage() {
   const teddy = document.getElementById("teddy");
   const noBtn = document.getElementById("noBtn");
 
-  teddy.src = "Img/teddy.avif";
+  // Set image to the default one using lowercase folder
+  teddy.src = "img/teddy.avif";
+
   document.getElementById("question").innerText = "Oluwaseyi Stephen 💖";
   document.getElementById("text").innerText = "Will you be my Valentine?";
 
@@ -72,6 +74,7 @@ function resetPage() {
   yesBtn.style.transform = "scale(1)";
   yesSize = 1;
 }
+
 
 /* Floating hearts animation */
 setInterval(() => {
